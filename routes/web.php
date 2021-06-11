@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManageLinksController;
+use App\Http\Controllers\ShowLinksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+/*
+ * Ruta que carregarà el mètode index() del controlador HomeController
+ */
+Route::get("/", [HomeController::class, "index"]);
+
+/*
+ * Ruta que carregarà el mètode index() del controlador ManageLinksController
+ */
+Route::get("/manage", [ManageLinksController::class, "index"]);
+
+/*
+ * TODO:
+ * Afegir les rutes per a afegir, modificar i eliminar links
+ */
+
+/*
+ * Ruta que carregarà el mètode showLinks() del controlador ShowLinksController
+ */
+Route::get("/{user}", [ShowLinksController::class, "showLinks"]);
+
