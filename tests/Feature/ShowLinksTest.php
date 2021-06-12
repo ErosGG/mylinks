@@ -9,14 +9,13 @@ use Tests\TestCase;
 class ShowLinksTest extends TestCase
 {
     /**
-     * A basic feature test example.
-     *
+     * Comprova que carrega correctament la vista show-links
      * @return void
      */
-    public function test_example()
+    public function test_loads_links_page()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $this->get('/jana')
+            ->assertStatus(200)
+            ->assertSee("Links - jana");
     }
 }

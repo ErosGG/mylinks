@@ -3,6 +3,6 @@
 @section("title", "$user - mylnks")
 
 @section("content")
-    <h1>Links de l'usuari {{ $user }}</h1>
-    <p>Aquesta és la pàgina per a mostrar els links</p>
+    <h1>Links - {{ $user }}</h1>
+    <p>Links de l'usuari</p>
 @endsection

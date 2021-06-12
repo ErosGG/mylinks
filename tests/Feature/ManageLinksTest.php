@@ -9,14 +9,13 @@ use Tests\TestCase;
 class ManageLinksTest extends TestCase
 {
     /**
-     * A basic feature test example.
-     *
+     * Comprova que carrega correctament la vista managa-links
      * @return void
      */
-    public function test_example()
+    public function test_loads_manage_page()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $this->get('/manage')
+            ->assertStatus(200)
+            ->assertSee("Manage Links");
     }
 }

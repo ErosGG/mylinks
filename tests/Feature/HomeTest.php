@@ -9,10 +9,10 @@ use Tests\TestCase;
 class HomeTest extends TestCase
 {
     /**
-     * Comprova que carrega correctament el Home
+     * Comprova que carrega correctament la vista home
      * @return void
      */
-    public function test_loads_home()
+    public function test_loads_home_page()
     {
         $this->get('/')
             ->assertStatus(200)
