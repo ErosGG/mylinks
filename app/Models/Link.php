@@ -18,6 +18,4 @@ class Link extends Model
         "title",
         "link",
     ];
-
-
 }
