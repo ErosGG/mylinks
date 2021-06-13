@@ -47,7 +47,7 @@
                             <a class="nav-link active" aria-current="page" href="{{ asset("/") }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ asset("manage") }}">Manage</a>
+                            <a class="nav-link" href="{{ route("manage.index") }}">Manage</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ asset("/eros") }}">Links</a>

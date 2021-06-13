@@ -24,7 +24,12 @@ Route::get("/", [HomeController::class, "index"]);
 /*
  * Ruta que carregarà el mètode index() del controlador ManageLinksController
  */
-Route::get("/manage", [ManageLinksController::class, "index"]);
+Route::get("/manage", [ManageLinksController::class, "index"])->name("manage.index");
+
+/*
+ * Ruta que carregarà el mètode create() del controlador ManageLinksController
+ */
+Route::post("/manage", [ManageLinksController::class, "create"])->name("manage.create");
 
 /*
  * TODO:
