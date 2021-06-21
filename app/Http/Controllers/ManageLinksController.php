@@ -9,15 +9,34 @@ class ManageLinksController extends Controller
 {
     public function index()
     {
-        return view("manage-links")->with("links", Link::all());
+        return view("manage-links")
+            ->with("links", Link::all());
     }
 
     public function create(Request $request)
     {
         Link::create([
             "title" => $request->title,
-            "link" => $request->link,
+            "url" => $request->url,
         ]);
+        return view("manage-links")->with("links", Link::all());
+    }
+
+    public function details($link_id)
+    {
+        return view("link-details")
+            ->with("link", Link::find($link_id))
+            ->with("link_id", $link_id);
+    }
+
+    public function edit(Link $link)
+    {
+        return view("manage-links")->with("links", Link::all());
+    }
+
+    public function delete(Link $link)
+    {
+        $link->delete();
         return view("manage-links")->with("links", Link::all());
     }
 }

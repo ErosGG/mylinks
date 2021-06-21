@@ -21,7 +21,7 @@ class LinkFactory extends Factory
     {
         return [
             "title" => $this->faker->company,
-            "link" => $this->faker->url,
+            "url" => $this->faker->url,
         ];
     }
 }

@@ -24,12 +24,27 @@ Route::get("/", [HomeController::class, "index"]);
 /*
  * Ruta que carregarà el mètode index() del controlador ManageLinksController
  */
-Route::get("/manage", [ManageLinksController::class, "index"])->name("manage.index");
+Route::get("/links", [ManageLinksController::class, "index"])->name("links.index");
+
+/*
+ * Ruta que carregarà el mètode details() del controlador ManageLinksController
+ */
+Route::get("/links/{link_id}", [ManageLinksController::class, "details"])->name("link.details");
 
 /*
  * Ruta que carregarà el mètode create() del controlador ManageLinksController
  */
-Route::post("/manage", [ManageLinksController::class, "create"])->name("manage.create");
+Route::post("/links", [ManageLinksController::class, "create"])->name("links.create");
+
+/*
+ * Ruta que carregarà el mètode edit() del controlador ManageLinksController
+ */
+//Route::get("/links/{link}/edit", [ManageLinksController::class, "edit"])->name("links.edit");
+
+/*
+ * Ruta que carregarà el mètode delete() del controlador ManageLinksController
+ */
+//Route::delete("/links/{link}", [ManageLinksController::class, "delete"])->name("links.delete");
 
 /*
  * TODO:

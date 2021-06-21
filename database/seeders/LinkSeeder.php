@@ -15,7 +15,7 @@ class LinkSeeder extends Seeder
     {
         Link::create([
             "title" => "NASA",
-            "link" => "https://www.nasa.gov/",
+            "url" => "https://www.nasa.gov/",
         ]);
 
         Link::factory()
