@@ -7,7 +7,7 @@
     <p>Links de l'usuari</p>
     @foreach($links as $link)
         <div>
-            <a href="{{$link->link}}">{{$link->title}}</a>
+            <a href="{{$link->url}}">{{$link->title}}</a>
         </div>
     @endforeach
 @endsection

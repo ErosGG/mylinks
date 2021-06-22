@@ -24,35 +24,71 @@ Route::get("/", [HomeController::class, "index"]);
 /*
  * Ruta que carregarà el mètode index() del controlador ManageLinksController
  */
-Route::get("/links", [ManageLinksController::class, "index"])->name("links.index");
+Route::get("/links/", [ManageLinksController::class, "index"])->name("links.index");
+
+/************************
+ *                      *
+ *  DETALLS DELS LINKS  *
+ *                      *
+ ************************/
 
 /*
  * Ruta que carregarà el mètode details() del controlador ManageLinksController
  */
-Route::get("/links/{link_id}", [ManageLinksController::class, "details"])->name("link.details");
+Route::get("/links/{link}/", [ManageLinksController::class, "details"])->name("link.details");
+
+/**********************
+ *                    *
+ *  CREACIÓ DE LINKS  *
+ *                    *
+ **********************/
 
 /*
  * Ruta que carregarà el mètode create() del controlador ManageLinksController
  */
-Route::post("/links", [ManageLinksController::class, "create"])->name("links.create");
+Route::post("/links/", [ManageLinksController::class, "create"])->name("link.create");
+
+/*********************
+ *                   *
+ *  EDICIÓ DE LINKS  *
+ *                   *
+ *********************/
 
 /*
  * Ruta que carregarà el mètode edit() del controlador ManageLinksController
  */
-//Route::get("/links/{link}/edit", [ManageLinksController::class, "edit"])->name("links.edit");
+Route::get("/links/{link}/edit/", [ManageLinksController::class, "edit"])->name("link.edit");
 
 /*
- * Ruta que carregarà el mètode delete() del controlador ManageLinksController
+ * Ruta que carregarà el mètode update() del controlador ManageLinksController
  */
-//Route::delete("/links/{link}", [ManageLinksController::class, "delete"])->name("links.delete");
+Route::put("/links/{link}/edit/", [ManageLinksController::class, "update"])->name("link.update");
+
+/*************************
+ *                       *
+ *  ELIMINACIÓ DE LINKS  *
+ *                       *
+ *************************/
 
 /*
- * TODO:
- * Afegir les rutes per a afegir, modificar i eliminar links
+ * Ruta que carregarà el mètode softDelete() del controlador ManageLinksController
  */
+Route::delete("/links/{link}/", [ManageLinksController::class, "delete"])->name("link.delete");
+
+
+/*
+ * Ruta que carregarà el mètode hardDelete() del controlador ManageLinksController
+ */
+//Route::delete("/links/{link}/", [ManageLinksController::class, "hardDelete"])->name("links.hardDelete");
+
+
+
+
+
+
 
 /*
  * Ruta que carregarà el mètode showLinks() del controlador ShowLinksController
  */
-Route::get("/{user}", [ShowLinksController::class, "showLinks"]);
+Route::get("/{user}/", [ShowLinksController::class, "showLinks"]);
 

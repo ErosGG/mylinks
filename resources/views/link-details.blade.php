@@ -10,9 +10,8 @@
             <p>URL: {{ $link->url }}</p>
             <p>Clics: {{ $link->views }}</p>
         </div>
-    @else
-        <h1>No existeix el link {{ $link_id }}</h1>
     @endif
+    <a href="{{ route("link.edit", ["link" => $link->id]) }}">Editar</a>
     <a href="{{ route("links.index") }}">Tornar al llistat</a>
 
 @endsection
