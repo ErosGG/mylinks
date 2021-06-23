@@ -3,9 +3,6 @@
 @section("title", "Edit - mylnks")
 
 @section("content")
-    <h1>Edició del link {{ $link->id }}</h1>
-    <p>Aquesta és la pàgina per a editar els links</p>
-    <p>S'haurà de poder editar el link seleccionat, tot validant les dades i evitant duplicitats</p>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -18,7 +15,7 @@
         </div>
     @endif
 
-    <form method="POST" action="">
+    <form method="POST" action=""> <!-- NO TÉ ACTION! Hauria de ser route("link.update") -->
         @csrf
         @method("PUT")
         <div class="card mt-5 bg-sublime border-sublime nl-add-new-link">
@@ -35,7 +32,6 @@
         </div>
     </form>
 
-    <div>
-        <a href="{{ route("links.index") }}">Tornar al llistat</a>
-    </div>
+    <a href="{{ route("links.index") }}">Tornar al llistat</a>
+
 @endsection

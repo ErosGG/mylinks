@@ -3,5 +3,5 @@
 @section("title", "Pàgina no trobada")
 
 @section("content")
-    <h1>Pàgina no trobada</h1>
+    <h1 class="text-center">Pàgina no trobada</h1>
 @endsection

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageLinksController;
 use App\Http\Controllers\ShowLinksController;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*
- * Ruta que carregarà el mètode index() del controlador HomeController
+ * Ruta que carregarà el mètode show() del controlador ShowLinksController
  */
-Route::get("/", [HomeController::class, "index"]);
+Route::get("/", [ShowLinksController::class, "show"])->name("links.show");
 
 /*
  * Ruta que carregarà el mètode index() del controlador ManageLinksController
@@ -80,15 +79,3 @@ Route::delete("/links/{link}/", [ManageLinksController::class, "delete"])->name(
  * Ruta que carregarà el mètode hardDelete() del controlador ManageLinksController
  */
 //Route::delete("/links/{link}/", [ManageLinksController::class, "hardDelete"])->name("links.hardDelete");
-
-
-
-
-
-
-
-/*
- * Ruta que carregarà el mètode showLinks() del controlador ShowLinksController
- */
-Route::get("/{user}/", [ShowLinksController::class, "showLinks"]);
-

@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Models\Link;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\DB;
+use App\Models\Link;
 use Tests\TestCase;
 
 class ManageLinksTest extends TestCase
@@ -25,8 +25,7 @@ class ManageLinksTest extends TestCase
     public function test_loads_manage_links_page()
     {
         $this->get('/links/')
-            ->assertStatus(200)
-            ->assertSee("Manage Links");
+            ->assertStatus(200);
     }
 
     public function test_shows_no_links_message()
@@ -58,7 +57,6 @@ class ManageLinksTest extends TestCase
         $link = Link::factory()->create();
         $this->get("/links/{$link->id}")
             ->assertStatus(200)
-            ->assertSee("Detalls del link {$link->id}")
             ->assertSee($link->title)
             ->assertSee($link->url)
             ->assertSee($link->views);
@@ -121,9 +119,6 @@ class ManageLinksTest extends TestCase
             "url" => "El camp URL és obligatori"
         ]);
         $this->assertEquals(0, Link::count());
-        // $this->assertDatabaseMissing("links", [
-        //     "url" => $link->url,
-        // ]);
         $this->get("/links/")
             ->assertSee("El camp URL és obligatori");
     }
@@ -138,9 +133,6 @@ class ManageLinksTest extends TestCase
             "url" => "El camp URL ha de ser una URL vàlida"
         ]);
         $this->assertEquals(0, Link::count());
-        // $this->assertDatabaseMissing("links", [
-        //     "url" => $link->url,
-        // ]);
         $this->get("/links/")
             ->assertSee("El camp URL ha de ser una URL vàlida");
     }
@@ -175,7 +167,6 @@ class ManageLinksTest extends TestCase
             ->assertStatus(200)
             ->assertViewIs("edit-link")
             ->assertViewHas("link", $link)
-            ->assertSee("Edició del link {$link->id}")
             ->assertSee($link->title)
             ->assertSee($link->url);
     }

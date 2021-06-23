@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Link;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
+use App\Models\Link;
 
 class ManageLinksController extends Controller
 {
+    public function show()
+    {
+        return view("show-links")
+            ->with("links", Link::all());
+    }
+
     public function index()
     {
         return view("manage-links")

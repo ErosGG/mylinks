@@ -2,27 +2,68 @@
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
+@font-face {
+    font-family: "Roboto";
+    src:
+    url("../fonts/Roboto-Regular.ttf") format("truetype")
+}
+
+* {
+    font-family: Roboto, "sans-serif";
+}
+
 main > .container {
     padding: 60px 15px 0;
-}
-
-div.link-container {
-    border: black solid 1px;
-    margin-top: 10px;
-    padding: 5px;
-}
-
-div.link-container > p {
-    margin: 0;
+    margin-bottom: 40px;
 }
 
 footer {
     position: static;
-    margin-top: 10px;
     padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
     /* Height of the footer*/
     height: 40px;
     background: lightgray;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.pb-desktop-list-small-rnd .pb-linkbox-inner {
+    min-height: 64px;
+    border-radius: 31px !important;
+    position: relative;
+}
+
+.pb-desktop-list-small-rnd .pb-linktitle {
+    margin-top: 0px !important;
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.lnkbio-linkcolor {
+    color: #221F1F;
+}
+
+a.lnkbio-linkcolor:hover {
+    color: #221F1F;
+}
+
+.lnkbio-boxcolor {
+    background-color: #e7ffe5;
+    /* color original: #fff1e5 */
+}
+
+.align-self-center {
+    align-self: baseline !important;
 }

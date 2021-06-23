@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Link;
 use Illuminate\Http\Request;
+use App\Models\Link;
 
 class ShowLinksController extends Controller
 {
-    public function showLinks($user)
+    public function show()
     {
         return view("show-links")
-            ->with([
-                "user" => $user,
-                "links" => Link::all(),
-            ]);
+            ->with("links", Link::all());
     }
 }
